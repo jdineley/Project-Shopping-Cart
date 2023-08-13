@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import ShopCart from "../ShopCart/ShopCart";
-import ItemCard from "../ItemCard/ItemCard";
 import Items from "../Items/Items";
 
 import styles from "./ShopPage.module.css";
@@ -19,7 +18,7 @@ export default function ShopPage() {
 
   function handleAddItem(item) {
     console.log("clicked");
-    setAddedItems([...addedItems, item]);
+    setAddedItems([...addedItems, { ...item, qty: 1 }]);
   }
   return (
     <>

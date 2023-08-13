@@ -5,6 +5,18 @@
   margin-block: 12px;
 }
 
+.cartItemCardRh {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cartItemCardPriceQty {
+  display: flex;
+  justify-content: space-between;
+}
+
 .img {
   width: 30%;
 }
@@ -16,4 +28,10 @@
 .priceUnit {
   font-size: 80%;
   vertical-align: top;
+}
+
+.qtySelect {
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #eee;
 }

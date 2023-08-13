@@ -4,7 +4,6 @@ function App() {
   return (
     <>
       <Navbar title="Home Page" parent="App" />
-      <div></div>
     </>
   );
 }
