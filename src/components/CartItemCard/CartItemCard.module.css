@@ -1,0 +1,19 @@
+.cartItemCard {
+  width: 90%;
+  display: flex;
+  gap: 12px;
+  margin-block: 12px;
+}
+
+.img {
+  width: 30%;
+}
+
+.price {
+  font-weight: 700;
+}
+
+.priceUnit {
+  font-size: 80%;
+  vertical-align: top;
+}

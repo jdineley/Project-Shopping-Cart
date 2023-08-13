@@ -1,0 +1,5 @@
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  border-left: 0.5px solid lightgray;
+}
