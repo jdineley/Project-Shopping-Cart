@@ -37,3 +37,33 @@
   border-radius: 8px;
   background-color: #eee;
 }
+
+.input {
+  width: 90px;
+  border: 0.5px solid darkgray;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #eee;
+}
+
+.deleteButton {
+  font-size: 1rem;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: red;
+  color: white;
+}
+
+.updateButton {
+  font-size: 1rem;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: green;
+  color: white;
+}
+
+.plusTenContainer {
+  display: flex;
+  gap: 5px;
+  align-items: end;
+}

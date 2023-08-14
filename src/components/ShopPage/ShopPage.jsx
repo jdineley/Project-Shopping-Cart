@@ -7,7 +7,9 @@ import styles from "./ShopPage.module.css";
 
 export default function ShopPage() {
   const [products, setProducts] = useState([]);
-  const [addedItems, setAddedItems] = useState([]);
+  const [addedItems, setAddedItems] = useState(() => {
+    return JSON.parse(localStorage.getItem("addedItems")) || [];
+  });
   const [filter, setFilter] = useState("");
   const displayProducts = !filter
     ? products
@@ -15,6 +17,11 @@ export default function ShopPage() {
         return product.category === filter;
       });
   console.log(products, addedItems);
+
+  useEffect(() => {
+    localStorage.setItem("addedItems", JSON.stringify(addedItems));
+  }, [addedItems]);
+
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
@@ -35,10 +42,10 @@ export default function ShopPage() {
     if (containsItem) {
       setAddedItems(
         addedItems.map((itm) => {
-          if (itm.id === item.id && itm.qty < 8) {
-            console.log(itm.qty);
+          if (itm.id === item.id && itm.qty < 9) {
             return { ...itm, qty: parseInt(itm.qty) + 1 };
-          } else if (itm.id !== item.id) return itm;
+          }
+          return itm;
         })
       );
     } else {
@@ -52,7 +59,17 @@ export default function ShopPage() {
     setFilter(value);
   }
 
-  function handleQtyChange(event, id) {
+  function handleQtyChange(event, id, del) {
+    console.log(del);
+    if (del) {
+      console.log("here");
+      setAddedItems(
+        addedItems.filter((item) => {
+          if (item.id !== id) return item;
+        })
+      );
+      return;
+    }
     const { value } = event.target;
     console.log(value, id);
     if (value === "0") {

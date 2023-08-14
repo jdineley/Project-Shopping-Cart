@@ -3,4 +3,5 @@
   flex-wrap: wrap;
   border-left: 0.5px solid lightgray;
   flex: 1;
+  max-height: 400px;
 }
