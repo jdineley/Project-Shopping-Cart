@@ -1,4 +1,8 @@
 .shopPage {
-  margin-top: 20px;
   display: flex;
+  justify-content: space-between;
+}
+
+.filter {
+  margin: 12px;
 }

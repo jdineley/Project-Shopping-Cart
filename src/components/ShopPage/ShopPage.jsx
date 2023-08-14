@@ -8,6 +8,12 @@ import styles from "./ShopPage.module.css";
 export default function ShopPage() {
   const [products, setProducts] = useState([]);
   const [addedItems, setAddedItems] = useState([]);
+  const [filter, setFilter] = useState("");
+  const displayProducts = !filter
+    ? products
+    : products.filter((product) => {
+        return product.category === filter;
+      });
   console.log(products, addedItems);
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -18,14 +24,71 @@ export default function ShopPage() {
 
   function handleAddItem(item) {
     console.log("clicked");
-    setAddedItems([...addedItems, { ...item, qty: 1 }]);
+    let containsItem = false;
+    for (let i = 0; i < addedItems.length; i++) {
+      if (addedItems[i].id === item.id) {
+        containsItem = true;
+        break;
+      }
+    }
+    console.log(containsItem);
+    if (containsItem) {
+      setAddedItems(
+        addedItems.map((itm) => {
+          if (itm.id === item.id && itm.qty < 8) {
+            console.log(itm.qty);
+            return { ...itm, qty: parseInt(itm.qty) + 1 };
+          } else if (itm.id !== item.id) return itm;
+        })
+      );
+    } else {
+      setAddedItems([...addedItems, { ...item, qty: 1 }]);
+    }
   }
+
+  function handleChangeFilter(event) {
+    const { value } = event.target;
+    console.log(value);
+    setFilter(value);
+  }
+
+  function handleQtyChange(event, id) {
+    const { value } = event.target;
+    console.log(value, id);
+    if (value === "0") {
+      setAddedItems(
+        addedItems.filter((item) => {
+          if (item.id !== id) return item;
+        })
+      );
+      return;
+    }
+    setAddedItems(
+      addedItems.map((item) => {
+        if (item.id === id) {
+          return { ...item, qty: value };
+        }
+        return item;
+      })
+    );
+  }
+
   return (
     <>
       <Navbar title="Shopping Page" parent="Navbar" />
+      <div className={styles.filter}>
+        <label htmlFor="filter">Filter Category: </label>
+        <select name="filter" id="filter" onChange={handleChangeFilter}>
+          <option value="">All Categories</option>
+          <option value="men's clothing">Men's Clothing</option>
+          <option value="women's clothing">Women's Clothing</option>
+          <option value="electronics">Electronics</option>
+          <option value="jewelery">Jewlery</option>
+        </select>
+      </div>
       <div className={styles.shopPage}>
-        <Items products={products} handleAddItem={handleAddItem} />
-        <ShopCart addedItems={addedItems} />
+        <Items products={displayProducts} handleAddItem={handleAddItem} />
+        <ShopCart addedItems={addedItems} handleQtyChange={handleQtyChange} />
       </div>
     </>
   );

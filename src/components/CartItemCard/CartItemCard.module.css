@@ -1,5 +1,6 @@
 .cartItemCard {
   width: 90%;
+  min-height: 200px;
   display: flex;
   gap: 12px;
   margin-block: 12px;
@@ -19,6 +20,7 @@
 
 .img {
   width: 30%;
+  align-self: flex-start;
 }
 
 .price {
