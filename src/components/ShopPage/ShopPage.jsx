@@ -11,6 +11,7 @@ export default function ShopPage({
   handleChangeFilter,
   handleAddItem,
   handleQtyChange,
+  handleClearBasket,
 }) {
   // const [products, setProducts] = useState([]);
   // const [addedItems, setAddedItems] = useState(() => {
@@ -110,7 +111,11 @@ export default function ShopPage({
       </div>
       <div className={styles.shopPage}>
         <Items products={displayProducts} handleAddItem={handleAddItem} />
-        <ShopCart addedItems={addedItems} handleQtyChange={handleQtyChange} />
+        <ShopCart
+          addedItems={addedItems}
+          handleQtyChange={handleQtyChange}
+          handleClearBasket={handleClearBasket}
+        />
       </div>
     </>
   );

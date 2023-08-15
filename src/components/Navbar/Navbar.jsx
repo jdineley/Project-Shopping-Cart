@@ -15,16 +15,19 @@ export default function Navbar({ parent, title, addedItems }) {
           <p>Qty</p>
           <p>
             {addedItems.reduce((acc, cur) => {
-              return acc + cur.qty;
+              return acc + parseInt(cur.qty);
             }, 0)}
           </p>
         </div>
         <div className={styles.summaryItem}>
           <p>Total</p>
           <p>
-            {addedItems.reduce((acc, cur) => {
-              return acc + cur.qty * cur.price;
-            }, 0)}
+            £
+            {addedItems
+              .reduce((acc, cur) => {
+                return acc + parseInt(cur.qty) * cur.price;
+              }, 0)
+              .toFixed(2)}
           </p>
         </div>
       </div>

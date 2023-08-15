@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import ShopPage from "./components/ShopPage/ShopPage";
-import { Outlet } from "react-router-dom";
+import Footer from "./components/Footer/Footer";
 import { useParams } from "react-router-dom";
 
 function App() {
@@ -90,8 +90,11 @@ function App() {
       })
     );
   }
+  function handleClearBasket() {
+    setAddedItems([]);
+  }
   return (
-    <>
+    <div className="app">
       <Navbar
         title={shop ? "Shopping Page" : "Home Page"}
         parent="Navbar"
@@ -104,11 +107,17 @@ function App() {
           handleQtyChange={handleQtyChange}
           displayProducts={displayProducts}
           addedItems={addedItems}
+          handleClearBasket={handleClearBasket}
         />
       ) : (
-        <h1>Home Page</h1>
+        <>
+          <img src="./src/assets/fake_amazon.jpg" alt="fake amazon image" />
+
+          <Footer />
+        </>
       )}
-    </>
+      {/* <Footer /> */}
+    </div>
   );
 }
 

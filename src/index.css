@@ -20,6 +20,7 @@ body {
   font-size: 1.6rem;
   /* background-color: #eee; */
   color: #383838;
+  height: 100vh;
 }
 
 header {
@@ -56,6 +57,25 @@ textarea {
 
 button {
   cursor: pointer;
+}
+
+/* .home-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-image > img {
+  max-width: 1000px;
+} */
+
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  height: 100vh;
 }
 
 @media (max-width: 900px) {
