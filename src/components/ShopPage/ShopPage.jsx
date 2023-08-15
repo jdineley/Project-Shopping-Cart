@@ -92,7 +92,7 @@ export default function ShopPage() {
 
   return (
     <>
-      <Navbar title="Shopping Page" parent="Navbar" />
+      <Navbar title="Shopping Page" parent="Navbar" addedItems={addedItems} />
       <div className={styles.filter}>
         <label htmlFor="filter">Filter Category: </label>
         <select name="filter" id="filter" onChange={handleChangeFilter}>

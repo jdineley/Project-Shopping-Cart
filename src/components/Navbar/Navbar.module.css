@@ -5,3 +5,14 @@
   align-items: center;
   padding: 12px;
 }
+
+.summaryContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.summaryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

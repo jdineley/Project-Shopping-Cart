@@ -12,3 +12,9 @@
 .hr {
   width: 90%;
 }
+
+@media (max-width: 900px) {
+  .shopCart {
+    width: 300px;
+  }
+}
