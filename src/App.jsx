@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import ShopPage from "./components/ShopPage/ShopPage";
 import Footer from "./components/Footer/Footer";
 import { useParams } from "react-router-dom";
+import imgUrl from "./assets/fake_amazon.jpg";
 
 function App() {
   const { shop } = useParams();
@@ -107,7 +108,7 @@ function App() {
         />
       ) : (
         <div className="home-splash">
-          <img src="./src/assets/fake_amazon.jpg" alt="fake amazon image" />
+          <img src={imgUrl} alt="fake amazon image" />
 
           <Footer />
         </div>
