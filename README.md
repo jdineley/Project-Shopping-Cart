@@ -1,8 +1,9 @@
-# React + Vite
+# Mock amazon shopping page and basket
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React - Javascript - React-Router
 
-Currently, two official plugins are available:
+Two routes: Home and Shop
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Common navbar with live purchace summary
+
+try here: https://rococo-selkie-4e374a.netlify.app/
