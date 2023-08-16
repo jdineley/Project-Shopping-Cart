@@ -23,19 +23,22 @@ export default function ShopCart({
       )}
 
       {addedItems.length > 0 && (
-        <div className={styles.totalCollector}>
-          <p>
-            Total: £
-            {addedItems
-              .reduce((acc, cur) => {
-                return acc + parseInt(cur.qty) * cur.price;
-              }, 0)
-              .toFixed(2)}
-          </p>
-          <button onClick={handleClearBasket} className={styles.clearButton}>
-            Clear Shopping Basket
-          </button>
-        </div>
+        <>
+          <div className={styles.totalCollector}>
+            <p>
+              Total: £
+              {addedItems
+                .reduce((acc, cur) => {
+                  return acc + parseInt(cur.qty) * cur.price;
+                }, 0)
+                .toFixed(2)}
+            </p>
+            <button onClick={handleClearBasket} className={styles.clearButton}>
+              Clear Shopping Basket
+            </button>
+          </div>
+          <button className={styles.checkoutButton}>Proceed to Checkout</button>
+        </>
       )}
     </div>
   );

@@ -56,7 +56,3 @@ export default function CartItemCard({ item, handleQtyChange }) {
     </div>
   );
 }
-
-// <div className={styles.buttonContainer}>
-//   <button className={styles.button}></button>
-// </div>

@@ -4,9 +4,6 @@
 
 .shopCart {
   width: 500px;
-  /* flex-grow: 1; */
-  /* height: 500px; */
-  /* border: 1px solid black; */
 }
 
 .hr {
@@ -23,6 +20,13 @@
 
 .clearButton {
   background-color: rgba(255, 0, 0, 0.707);
+  border-radius: 10px;
+  padding: 8px 20px;
+  color: white;
+}
+
+.checkoutButton {
+  background-color: rgba(0, 157, 255, 0.707);
   border-radius: 10px;
   padding: 8px 20px;
   color: white;

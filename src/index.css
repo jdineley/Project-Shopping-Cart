@@ -42,7 +42,7 @@ a {
 
 img {
   display: block;
-  width: 100%;
+  width: 50%;
 }
 
 button,
@@ -70,8 +70,13 @@ button {
 } */
 
 .app {
+  /* height: 100vh; */
+}
+
+.home-splash {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 #root {

@@ -1,7 +1,6 @@
 import styles from "./ItemCard.module.css";
 
 export default function ItemCard({ product, handleAddItem }) {
-  // console.log(product);
   return (
     <div className={styles.ItemCard}>
       <div>

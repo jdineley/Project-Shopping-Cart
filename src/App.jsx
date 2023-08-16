@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 
 function App() {
   const { shop } = useParams();
-  console.log(shop);
   const [products, setProducts] = useState([]);
   const [addedItems, setAddedItems] = useState(() => {
     return JSON.parse(localStorage.getItem("addedItems")) || [];
@@ -17,7 +16,6 @@ function App() {
     : products.filter((product) => {
         return product.category === filter;
       });
-  console.log(products, addedItems);
 
   useEffect(() => {
     localStorage.setItem("addedItems", JSON.stringify(addedItems));
@@ -56,14 +54,12 @@ function App() {
 
   function handleChangeFilter(event) {
     const { value } = event.target;
-    console.log(value);
     setFilter(value);
   }
 
   function handleQtyChange(event, id, del) {
     console.log(del);
     if (del) {
-      console.log("here");
       setAddedItems(
         addedItems.filter((item) => {
           if (item.id !== id) return item;
@@ -110,13 +106,12 @@ function App() {
           handleClearBasket={handleClearBasket}
         />
       ) : (
-        <>
+        <div className="home-splash">
           <img src="./src/assets/fake_amazon.jpg" alt="fake amazon image" />
 
           <Footer />
-        </>
+        </div>
       )}
-      {/* <Footer /> */}
     </div>
   );
 }

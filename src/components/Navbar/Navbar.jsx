@@ -5,9 +5,9 @@ export default function Navbar({ parent, title, addedItems }) {
   return (
     <div className={styles.navbar}>
       {title === "Home Page" ? (
-        <Link to="shop-page">Shop Page</Link>
+        <Link to="shop-page">Go shop</Link>
       ) : (
-        <Link to="/">home</Link>
+        <Link to="/">Go home</Link>
       )}
       <h1>{title}</h1>
       <div className={styles.summaryContainer}>
